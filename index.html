@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+			margin: 2em;
+    		font-family: "Open Sans", sans-serif;
+			background-image: url('background.jpg');
+    		/*background-image: url('https://img.freepik.com/free-photo/grilled-meat-skewers-chicken-shish-kebab-with-zucchini-tomatoes-red-onions_2829-10942.jpg?w=996&t=st=1678814934~exp=1678815534~hmac=35a41bb70427404aef8fad56d6d5ac03389bb9202486518d3a3c1cebfc18cd0e'); */
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+     		background-size: cover;
+
+		}
+		label {
+			font-size: 18px;
+			color: #090909;
+			margin-top: 20px;
+			display: block;
+		}
+		input[type="text"] {
+			font-size: 16px;
+			padding: 8px;
+			border: 2px solid #010101;
+			border-radius: 4px;
+			width: 50%;
+			margin-bottom: 20px;
+			color: #050303;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			font-size: 18px;
+			color: #000000;
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: rgba(255, 255, 255, 0.7);
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			border-radius: 4px;
+		}
+		#meal-time-filter {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #555;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+#meal-time-filter option {
+  color: #333;
+}
+
+#cuisine-filter{
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #555;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+#cuisine-filter option {
+  color: #333;
+}
+
+.animation {
+  animation: fadeIn 3s;
+  font-size: 3em;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+    </style>
+    <title>Recipe Filter</title>
+  </head>
+  <body>
+
+	<center>
+		<div class="animation">COOK'IN!</div>
+	</center>
+	<label for="ingredient-filter">Filter by Ingredient:</label>
+    <input type="text" id="ingredient-filter" placeholder="Enter comma-separated ingredients" oninput="filterRecipes()" >
+
+
+	<label for="cuisine-filter">Filter by Cuisine:</label>
+	<select id="cuisine-filter" onchange="filterRecipes()">
+		<option value="">All</option>
+		<option value="Italian">Italian</option>
+		<option value="Chinese">Chinese</option>
+		<option value="Indian">Indian</option>
+		<option value="Mexican">Mexican</option>
+	  </select>
+   <!--<input type="text" id="cuisine-filter" placeholder="Enter cuisine" oninput="filterRecipes()">--> 
+
+	<label for="meal-time-filter">Filter by Meal Time:</label>
+	<select id="meal-time-filter" onchange="filterRecipes()">
+		<option value="">All</option>
+		<option value="breakfast">Breakfast</option>
+		<option value="lunch">Lunch</option>
+		<option value="dinner">Dinner</option>
+	  </select>
+    <!--<input type="text" id="meal-time-filter" placeholder="Enter meal time" oninput="filterRecipes()"> -->
+
+
+    <ul id="recipe-list"></ul>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
